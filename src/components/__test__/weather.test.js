@@ -30,3 +30,4 @@ it("matches snapshot", () => {
     const tree = renderer.create(<Weather location="Mumbai" temp="234" precip="Sunny"></Weather> ).toJSON();    
     expect(tree).toMatchSnapshot();
 })
+
