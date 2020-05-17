@@ -13,6 +13,10 @@ test("renders without crashing", () => {
   ReactDOM.render(<App />, div);
 });
 
+// doing the same mock testing with enzyme
+// as well as react-testing-library
+// for learning purposes
+
 it("mock testing using enzyme", async (done) => {
   const mockResponse = {
     name: "Paris",
