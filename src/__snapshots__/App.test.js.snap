@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`fetches data from API when the server correctly responds 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="container"
+  >
+    <Weather
+      location="Paris"
+      precip="Cloudy"
+      temp="210"
+    />
+  </div>
+</div>
+`;
+
+exports[`mock testing using enzyme 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="container"
+  >
+    <Weather
+      location="Paris"
+      precip="Cloudy"
+      temp="210"
+    />
+  </div>
+</div>
+`;
