@@ -1,33 +1,30 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Weather from '../weather.component';
+import React from "react";
+import ReactDOM from "react-dom";
+import { shallow } from "enzyme";
+import Weather from "../weather.component";
 
-import { render } from '@testing-library/react';
 import "@testing-library/jest-dom";
 
-import renderer from "react-test-renderer";
-
 it("renders without crashing", () => {
-    const div = document.createElement("div");
-    ReactDOM.render(<Weather />, div);
-})
+  const div = document.createElement("div");
+  ReactDOM.render(<Weather />, div);
+});
 
 it("renders weather details correctly", () => {
-    const {getByTestId} = render(<Weather location="Mumbai" temp="234" precip="Sunny"></Weather> );
-    expect(getByTestId("location")).toHaveTextContent("Mumbai");
-    expect(getByTestId("temp")).toHaveTextContent("234");
-    expect(getByTestId("precip")).toHaveTextContent("Sunny");
-})
+  const weather = shallow(
+    <Weather location="Mumbai" temp="234" precip="Sunny"></Weather>
+  );
+  expect(weather).toMatchSnapshot();
+});
 
 it("renders weather details correctly 2", () => {
-    const {getByTestId} = render(<Weather location="Delhi" temp="190" precip="Rain"></Weather> );
-    expect(getByTestId("location")).toHaveTextContent("Delhi");
-    expect(getByTestId("temp")).toHaveTextContent("190");
-    expect(getByTestId("precip")).toHaveTextContent("Rain");
-})
+  const weather = shallow(
+    <Weather location="Delhi" temp="164" precip="Rain"></Weather>
+  );
+  expect(weather).toMatchSnapshot();
+});
 
 it("matches snapshot", () => {
-    const tree = renderer.create(<Weather location="Mumbai" temp="234" precip="Sunny"></Weather> ).toJSON();    
-    expect(tree).toMatchSnapshot();
-})
-
+  const weather = shallow(<Weather />);
+  expect(weather).toMatchSnapshot();
+});
