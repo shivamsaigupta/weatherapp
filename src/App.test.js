@@ -15,7 +15,7 @@ test("renders without crashing", () => {
 
 // doing the same mock testing with enzyme
 // as well as react-testing-library
-// for learning purposes
+// to differentiate between them
 
 it("mock testing using enzyme", async (done) => {
   const mockResponse = {
