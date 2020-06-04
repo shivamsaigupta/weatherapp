@@ -44,9 +44,10 @@ class App extends React.Component {
     );
     const res = await api_call.json();
     if (res.name !== undefined) {
+      const tempCelsius = (res.main.temp - 273).toFixed(1);
       this.setState({
         location: res.name,
-        temp: res.main.temp,
+        temp: tempCelsius,
         precip: res.weather[0].main,
         icon: this.getIcon(res.weather[0].id),
         loading: false,

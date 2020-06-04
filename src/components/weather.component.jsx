@@ -20,7 +20,7 @@ function showContent(props) {
         <FontAwesomeIcon size="6x" icon={props.icon} />
       </h5>
       <h1 data-testid="temp" className="py-2">
-        {props.temp}&deg;
+        {props.temp}&deg;C
       </h1>
       <h4 data-testid="precip" className="py-3">
         {props.precip}
